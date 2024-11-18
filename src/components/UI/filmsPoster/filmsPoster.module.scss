@@ -1,0 +1,49 @@
+@import './../../../scss/_mixins.scss';
+@import './../../../scss/_style.scss';
+.poster{
+ @include poster;
+
+
+ @media (max-width:$tablet) {
+    max-width: $tablet;
+    
+ }
+ @media (max-width:$mobile) {
+    max-width: $mobile;
+ }
+ @media (max-width:$mobileSmall) {
+    max-width:479.98 - 30 + px;
+    padding: 15px 10px;
+    
+ }
+ @media (max-width:431px) {
+   max-width:430 - 20 + px;
+   padding: 10px 10px;
+   
+}
+ @media (max-width:412px) {
+    max-width: 412 - 20 + px;
+    padding: 10px 10px;
+ }
+    .header{
+
+       h2{
+        font-size: 24px;
+        font-weight: 700;
+        color: #e0dfdc;
+        margin-bottom: 30px;
+       }
+    }
+    .content{
+
+        .img{
+      @include image-container;
+        }
+    }
+}
+.video{
+    height: 400px;
+    iframe{
+        height: 100%;
+    }
+}

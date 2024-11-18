@@ -1,0 +1,70 @@
+@import './style';
+@import './mixins';
+
+//-------Бургер меню--------------------------------
+
+.icon_menu {
+	display: none;
+  position: relative;	
+	z-index: 10;
+	@media (max-width: $tablet) {
+		display: flex;
+    align-items: center;
+		position: relative;
+		width: toRem(24);
+		height: toRem(16);
+		z-index: 15;
+		
+		
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			//@include adaptiveValue("right",40,25);
+			
+			position: absolute;
+			width: 100%;
+			height: toRem(2.5);
+			background-color: #fff;
+      @media (max-width:$pc) {
+        right: 0;
+      }
+			
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		
+		.menu-open & {
+			span {
+				width: 0;
+         
+			}
+			&::before,
+			&::after {
+        background-color: #fff;
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+
+
+
+  
+  /////------------------------------------------------------

@@ -1,0 +1,118 @@
+@import './../../../scss/style';
+.card{
+    border-top: 1px solid #00000080;
+    box-shadow: inset  0 1px #ffffff20;
+    padding: 20px 40px;
+    margin: 0 -20px;
+    color: #a8a8a8;
+    color: #e0dfdc;
+    position: relative;}
+    .card-ligth{
+        color: #fff;
+    }
+    .content{
+        display:grid;
+        grid-template-columns: 200px 1fr;
+        column-gap: 20px;
+        align-items:flex-start;
+
+        @media (max-width:$mobile)  {
+           
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2,auto);
+            margin-bottom: 10px;
+        }
+        .image{
+            width: 200px;
+            height: 300px;
+            border-radius: 4px 4px 0 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    transition: all .3s;
+    @media (max-width:$mobile) {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 15px;
+        box-shadow: none;
+    }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              max-width: 100%;
+            }
+
+        }
+        .info{
+           
+            .titles{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+        .title{
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 17px;
+        }
+        .subtitle{
+            font-size: 12px;
+            line-height: 1.4;
+            color: inherit;
+            letter-spacing: 0.02em;
+        }
+    }
+            ul li{
+                display: flex;
+                color: inherit;
+                
+                padding: 0 4px 4px 0;
+                span{
+                    font-weight: 600;
+                }
+                p{
+                  font-style: italic;  
+                }
+
+            }
+            .discription{
+                margin-top: 13px;
+                color: inherit;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+            font-size: 14px;
+            font-weight: 400;
+            -webkit-line-clamp: 4;
+            }
+           
+        }
+    }
+    .footer{
+        display: flex;
+        flex-direction: row;
+        @media (max-width:$mobile){
+            flex-direction: column;
+            row-gap: 10px;
+        }
+    }
+ 
+.comments{
+    display: flex;
+flex-direction: row;
+
+    position: absolute;
+    right:40px;
+    bottom: 30px;
+}
+.watched,.comment{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+ margin-right: 20px;
+p{
+    color: inherit;
+    font-size: 12px;  
+    margin-left: 5px;
+    
+   
+}
+}

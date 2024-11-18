@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800&display=swap");
+@import './mixins';
+
+.title{
+    span{
+font-weight: 600;
+padding: 2px 5px;
+margin-left: 15px;
+background: linear-gradient(-45deg, #ee5200, #e70062, #0097d5, #1c84cd);
+animation: Gradient 3s ease infinite;
+-webkit-animation:Gradient 3s ease infinite;
+    }
+}
+
+
+    .logo{
+    
+     @include logo;
+  }

@@ -1,0 +1,40 @@
+@import './../../../scss/style';
+
+.plus{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    border-radius: 8px;
+    @media (max-width:$mobileSmall) {
+      right: 10px;
+    }
+    .icon{
+        position: relative;
+        display: flex;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        padding: 0 0 25px 25px;
+        overflow: hidden;
+        &::after{
+        content: '';
+        background: linear-gradient(to bottom, #606060, #4a4a4a);
+      
+        box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        position: absolute;
+          z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: skew(45deg);
+        transform-origin: 0 0;
+    }
+    }}

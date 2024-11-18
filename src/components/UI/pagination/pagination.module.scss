@@ -1,0 +1,37 @@
+@import './../../../scss/style';
+
+.pagination{
+    border-top: 1px solid $black;
+    box-shadow: inset  0 1px $dark-bear;
+    padding: 20px 40px 0px;
+    margin: 0 -40px;
+
+    .download{
+        display: flex;
+        justify-content: center;
+      
+        .button{
+  width: 50% !important;
+  height: 54px !important;
+        }
+    }
+    .paginate{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        .page{
+            margin: 10px 5px 0 5px;
+            line-height: 38px;
+            padding: 0 10px;
+            border: 1px solid $black;
+            border-radius: 3px;
+            font-size: 16px;
+            min-width: 40px;
+          }  .active{
+                background: $red-background;
+                color: #fff;
+                border: 1px solid $red-background
+            }
+        
+    }
+}

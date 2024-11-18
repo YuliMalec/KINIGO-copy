@@ -1,0 +1,190 @@
+
+@use 'sass:math';
+//Підключення шрифту
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src:
+			url("../fonts/#{$file_name}.woff2") format("woff2"),
+			url("../fonts/#{$file_name}.woff") format("woff");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+//Percent
+@function percent($px, $from: 100) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+//REM
+@function toRem($px, $current: 16) {
+	$result: math.div($px, $current) + rem;
+	@return $result;
+}
+//EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+//Currency
+@mixin currency($sym) {
+	&::after {
+		content: "#{$sym}";
+	}
+}
+
+// Grids
+@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+	display: grid;
+	gap: $gap;
+	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+}
+
+// Адаптивна властивість (clamp)
+@mixin adaptiveValue($property, $startSize, $minSize, $keepSize: 0, $widthFrom: $containerWidth, $widthTo: $minWidth) {
+	@if ($startSize==0) {
+		$startSize: 0.000001;
+	}
+	@if ($minSize==0) {
+		$minSize: 0.000001;
+	}
+
+	// Для calc();
+	$addSize: math.div($startSize - $minSize, 16);
+
+	@if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+		$widthFrom: $maxWidth;
+	}
+
+	// Брейк-поїнти в EM
+	$widthFromMedia: em($widthFrom);
+	$widthToMedia: em($widthTo);
+
+	// Формула плаваючого значення
+	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+	$yIntersection: -$widthTo * $slope + $minSize;
+	@if ($yIntersection==0) {
+		$yIntersection: 0.000001;
+	}
+	$flyValue: #{toRem($yIntersection)}" + " #{$slope * 100}vw;
+
+	// Отримання значення властивості
+	$propertyValue: #{"clamp(" toRem($minSize) "," $flyValue "," toRem($startSize) ")"};
+	// Якщо негативні значення
+	@if ($minSize > $startSize) {
+		$propertyValue: #{"clamp(" toRem($startSize) "," $flyValue "," toRem($minSize) ")"};
+	}
+
+	// Встановлюємо значення за замовчуванням
+	@if $keepSize != 1 and $keepSize != 3 {
+		@media (min-width: $widthFromMedia) {
+			#{$property}: toRem($startSize);
+		}
+	}
+	// Адаптуємо розмір у проміжку між зазначеними ширинами в'юпорту
+	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+		// Якщо підтримується clamp();
+		@supports (#{$property}: $propertyValue) {
+			#{$property}: $propertyValue;
+		}
+		// Якщо не підтримується clamp();
+		@supports not (#{$property}: $propertyValue) {
+			#{$property}: calc(#{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+		}
+	}
+	@if $keepSize != 1 and $keepSize != 2 {
+		@media (max-width: $widthToMedia) {
+			#{$property}: toRem($minSize);
+		}
+	}
+}
+
+//animation
+
+@mixin animation-mixin($name) {
+	@keyframes #{$name} {
+	 0% { background-position: 0 50%; }
+	 50% {background-position: 100% 50%;}
+	 100% {background-position: 0% 50%;}
+	}
+  }
+
+  @mixin poster (){
+		flex: 1 1 65%;
+		padding: 30px 20px;
+	background: #2b2b2b;
+	border-radius:0 8px 8px 0;
+	position: relative;
+	
+  }
+  @mixin image-container (){
+	width: 200px;
+	height: 300px;
+	border-radius: 4px 4px 0 0;
+box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+transition: all .3s;
+img{
+width: 100%;
+height: 100%;
+}
+  }
+
+  @mixin film-item{
+	display:grid;
+        grid-template-columns: 200px 1fr;
+        column-gap: 20px;
+        align-items:flex-start;
+  }
+
+  @mixin logo (){
+	flex-grow: 2;
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 48px;
+justify-content: center;
+	
+	
+    height: 100%;
+    background:url(/src/assets/logo3.png) 0 9px/40px no-repeat;
+    &-title{
+        font-size: 18px;
+        letter-spacing: 5px;
+        font-weight: 400;
+        line-height: 1;
+       display: flex;
+       align-items: center;
+      
+
+                &-blue{
+            color:#0156b8;
+            font-weight: 800;
+
+        }
+        &-yell{
+           color: #ffd800;
+           font-weight: 800;
+        }
+    }
+    &-link{
+     padding: 5px 10px;
+     text-transform: uppercase;
+     font-weight: 600;
+     color: #fff;
+     opacity: 0.8;
+     letter-spacing: 3px;
+    }
+    &::before{
+       
+       
+
+    }
+  }
+
+
+ 
+
+
