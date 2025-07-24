@@ -85,23 +85,24 @@
 		}
 	}
 	// Адаптуємо розмір у проміжку між зазначеними ширинами в'юпорту
-	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+	//@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
 		// Якщо підтримується clamp();
-		@supports (#{$property}: $propertyValue) {
-			#{$property}: $propertyValue;
-		}
+		//@supports (#{$property}: $propertyValue) {
+		//	#{$property}: $propertyValue;
+		//}
 		// Якщо не підтримується clamp();
-		@supports not (#{$property}: $propertyValue) {
-			#{$property}: calc(#{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
-		}
-	}
+		//@supports not (#{$property}: $propertyValue) {
+		//	#{$property}: calc(#{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+		//}
+	//}
+
 	@if $keepSize != 1 and $keepSize != 2 {
 		@media (max-width: $widthToMedia) {
 			#{$property}: toRem($minSize);
 		}
 	}
-}
 
+}
 //animation
 
 @mixin animation-mixin($name) {

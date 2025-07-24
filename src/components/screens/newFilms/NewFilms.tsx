@@ -1,5 +1,5 @@
 
-import React,{useEffect} from 'react'
+import {useEffect} from 'react'
 import { useTypeSelector } from '../../../store/hooks/useTypeSelector'
 import { useGetNewFilmsQuery} from '../../../services/kinogoService'
 import { FilmItem } from '../../UI/FilmItem/FilmItem'
@@ -18,7 +18,7 @@ export default function NewFilms() {
   
       document.querySelector('.wrapper')?.scrollTo(0,0)
        },[page])
-       console.log(films)
+       console.log(active)
     if (isLoading) return <div>Завантаження...</div>
   if (!data) return <div>Немає фільмів!</div>
   return (<>

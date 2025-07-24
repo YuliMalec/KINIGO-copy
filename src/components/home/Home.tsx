@@ -4,7 +4,7 @@ import Header from "../UI/header/Header";
 import Menu from "../UI/menu/Menu";
 import Footer from "../UI/footer/Footer";
 import MeinContent from "../UI/mainContent/MeinContent";
-import Modal from './../UI/modal/Modal'
+
 const Home:FC = () =>{
 
    

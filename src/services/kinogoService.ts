@@ -1,4 +1,4 @@
-import { paginateReduser } from './../store/redusers/paginationSlice';
+
 
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import { IMovies,IQuery, IImage ,ISerialsDetails, IMovieDetail, IVideos} from '../models/models';
@@ -10,7 +10,7 @@ import { ACCESS_TOKEN } from './../constants/constants';
 
 export const kinogoApi = createApi({
     reducerPath:'kinogoApi',
-    baseQuery: fetchBaseQuery({baseUrl:BASE_URL,prepareHeaders:(headers,{getState})=>{
+    baseQuery: fetchBaseQuery({baseUrl:BASE_URL,prepareHeaders:(headers)=>{
         headers.set('authorization', `Bearer ${ACCESS_TOKEN}`)
         return headers;
     }}),

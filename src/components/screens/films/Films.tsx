@@ -6,12 +6,12 @@ import { useGetNowplayingQuery } from '../../../services/kinogoService'
 import  FilmItem  from './../../UI/FilmItem/FilmItem'
 import { Pagination } from '../../UI/pagination/Pagination'
 
-import { useAppSelector } from '../../../store/hooks/hooks'
-import { useLocation, useParams } from 'react-router-dom'
+/*import { useAppSelector } from '../../../store/hooks/hooks'*/
+
 
 
 export const Films: FC= () =>{
-  const {active} = useAppSelector(state=>state.toggleReduser)
+/*  const {active} = useAppSelector(state=>state.toggleReduser)*/
     const {page}= useTypeSelector(state=>state.paginateReduser)
     const {data,isLoading} = useGetNowplayingQuery([page])
     const films =data?.results

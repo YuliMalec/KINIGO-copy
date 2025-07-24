@@ -6,7 +6,7 @@ interface IIcon{
     icon:IconType
 }
 
-let colorIcon = '#a8a8a8'
+/*let colorIcon = '#a8a8a8'*/
 
 const IconItem:React.FC<IIcon> = ({icon:FaSun})=>{
     return <FaSun fill={'#a8a8a8'} size={14}/>;

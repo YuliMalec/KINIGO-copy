@@ -1,9 +1,9 @@
-import React,{useEffect} from 'react'
+import {useEffect} from 'react'
 import { useTypeSelector } from '../../../store/hooks/useTypeSelector'
 import { useGetSerialsQuery} from '../../../services/kinogoService'
 import { FilmItem } from '../../UI/FilmItem/FilmItem'
 import { Pagination } from '../../UI/pagination/Pagination'
-import { useHref, useLocation,  } from 'react-router-dom'
+import { useLocation,  } from 'react-router-dom'
 
 export default function Serials() {
     const {page}= useTypeSelector(state=>state.paginateReduser)
@@ -12,8 +12,8 @@ export default function Serials() {
 
    
 const location = useLocation()
- console.log(location.pathname)
-const movietype = 'serials';
+ 
+
     useEffect(()=>{
   
       document.querySelector('.wrapper')?.scrollTo(0,0)

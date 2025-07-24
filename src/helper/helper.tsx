@@ -1,7 +1,4 @@
 
-export  const changeColor =(event:React.ButtonHTMLAttributes<HTMLButtonElement >,)=>{
-      
-}
 
 
 export  const createPages= (total_pages:number) =>{

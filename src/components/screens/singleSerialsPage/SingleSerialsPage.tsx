@@ -1,4 +1,4 @@
-import { useNavigate, useParams,redirect } from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import style from './../singleFilmPage/singleFilmPage.module.scss'
 import {useGetSerialsDetailsQuery} from '../../../services/kinogoService'
 import {Video} from './../singleFilmPage/SingleFilmPage'

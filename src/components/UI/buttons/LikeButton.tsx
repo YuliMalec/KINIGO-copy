@@ -1,4 +1,4 @@
-import React from 'react'
+
 import style from './likeButton.module.scss'
 import { AiOutlineLike } from "react-icons/ai";
 import classNames from 'classnames';

@@ -1,6 +1,5 @@
-import {useState,useCallback} from 'react'
-import { number } from 'prop-types';
-import { IGenre,IGenres } from './../../models/models';
+
+import { IGenre} from './../../models/models';
 import { useGetGenreQuery } from '../../services/kinogoService';
 
 

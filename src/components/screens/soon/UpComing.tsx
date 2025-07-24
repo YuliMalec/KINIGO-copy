@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import {useEffect} from 'react'
 import { useTypeSelector } from '../../../store/hooks/useTypeSelector'
 import { useGetUpcomingMoviesQuery} from '../../../services/kinogoService'
 import { FilmItem } from '../../UI/FilmItem/FilmItem'

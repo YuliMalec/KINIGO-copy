@@ -1,9 +1,9 @@
-import React from 'react'
-import { Routes,Route, Router } from "react-router-dom";
-import FilmItem from '../components/UI/FilmItem/FilmItem';
+
+import { Routes,Route } from "react-router-dom";
+
 import SingleFilmPage from '../components/screens/singleFilmPage/SingleFilmPage';
 import SingleSerialsPage from '../components/screens/singleSerialsPage/SingleSerialsPage'
-import FilmsPoster from '../components/UI/filmsPoster/FilmsPoster';
+
 import { Films } from '../components/screens/films/Films';
 import NewFilms from '../components/screens/newFilms/NewFilms';
 import Serials from '../components/screens/serials/Serials';
@@ -15,12 +15,12 @@ import FilterByGenre from '../components/screens/filters/FilterByGenre';
 import FilterByYear from '../components/screens/filters/FilterByYaer';
 import FilterByType from '../components/screens/filters/FilterByType';
 import FilterByCountry from '../components/screens/filters/FilterByCountry';
-
+console.log('/search/multi/:id')
 export default function AppRouts() {
   return (
     <Routes>
       
-       <Route path={'/:id'||'/search/multi/:id'} element={<SingleFilmPage/>}/>
+       <Route path={'/:id'} element={<SingleFilmPage/>}/>
         <Route path={':title/:id'} element={<SingleSerialsPage/>}/>
         
         <Route path='/' element={<Films/>}/>

@@ -1,9 +1,9 @@
- import React,{FC,useState,useRef,useMemo,memo} from 'react'
+ import {FC,useState} from 'react'
 
  import style from './filmItem.module.scss';
 import {Link} from 'react-router-dom';
 import WatchButton from '../buttons/WatchButton';
-import { useGetGenreQuery } from '../../../services/kinogoService';
+
 import useGetGenre from '../../../store/hooks/useGetGenre';
 import Rating from '../buttons/Rating';
 import LikeButton from '../buttons/LikeButton';
@@ -27,7 +27,7 @@ title:string |undefined
 
  const [genres,setGenres] =useState(useGetGenre(item.genre_ids))
 const {swittchSun} =useAppSelector(state=>state.turnReduser)
-
+console.log(setGenres)
    return (<article  className={style.card}
      style={{color:swittchSun?'#fff':'#e0dfdc'}}>
       

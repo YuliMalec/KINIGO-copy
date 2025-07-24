@@ -1,10 +1,10 @@
-import {FC,memo,PropsWithChildren, useState,ChangeEvent,useRef, useEffect,useCallback} from 'react'
-import '../../../scss/style.css';
-import RedButton from '../buttons/RedButton';
+import {FC,memo,PropsWithChildren, useState,ChangeEvent, useEffect,useCallback} from 'react'
+import '../../../scss/styles.css';
+import RedButton from './../buttons/RedButton';
 import style from './header.module.scss';
-import './../../../scss/_burger.scss';
+import '../../../scss/_burger.scss';
 import { useNavigate } from 'react-router-dom';
-import classNames from 'classnames/bind';
+
 import LinkLogo from './LinkLogo';
 import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
 import { setSearch } from '../../../store/redusers/searchSlice';

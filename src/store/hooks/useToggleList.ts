@@ -11,7 +11,7 @@ export const useToggleList = () =>{
     let films;
     if(active.active ===titleMenu[0]){
       
-        const {data} = useGetNowplayingQuery(page)
+        const {data} = useGetNowplayingQuery([page])
          films = data?.results
         dispatch(setCurrentList(films))
         console.log(data)

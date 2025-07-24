@@ -1,5 +1,5 @@
 
-import React,{useState} from 'react'
+import {useState} from 'react'
 import { usePaginationProps,usePaginationReturn } from '../../models/models'
 
 
@@ -8,7 +8,7 @@ const usePagination:UsePagination = ({contentPerPage,data:data})=>{
     const [page, setPage] = useState(1); 
     const total_pages = data.total_pages;
    
-    const total_films = data?.results.length; 
+   /* const total_films = data?.results.length; */
 
    const pageCount = Math.ceil(total_pages/ contentPerPage);
     const lastContentIndex =page>=254? total_pages-1 : page+contentPerPage;

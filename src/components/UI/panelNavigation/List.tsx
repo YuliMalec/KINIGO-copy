@@ -1,10 +1,6 @@
 
 import { FC,memo} from 'react';
 import style from './panelNavigation.module.scss'
-import { ActionCreatorWithPayload } from '@reduxjs/toolkit/react';
-import { useNavigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
-import { setCountry, setGenre, setType, setYear } from '../../../store/redusers/filterSlice';
 
 
 interface IList{

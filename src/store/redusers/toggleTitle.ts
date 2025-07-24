@@ -1,5 +1,5 @@
-import { IMovies,IMovie } from './../../models/models';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IMovies} from './../../models/models';
+import { createSlice} from '@reduxjs/toolkit';
 import { titleMenu } from '../../constants/constants';
 
 

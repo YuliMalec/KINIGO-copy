@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import { useFilterByGenreQuery, useGetNowplayingQuery } from '../../../services/kinogoService'
+
+import { useFilterByGenreQuery } from '../../../services/kinogoService'
 import { useAppSelector } from '../../../store/hooks/hooks'
 import FilmItem from '../../UI/FilmItem/FilmItem' 
 

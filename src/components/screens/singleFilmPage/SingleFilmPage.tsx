@@ -1,8 +1,8 @@
-import React,{FC, useState} from 'react'
+import{FC} from 'react'
 import style from './singleFilmPage.module.scss';
-import { useNavigate, useParams } from 'react-router-dom';
-import { redirect } from 'react-router-dom';
-import {  useGetMovieDetailsQuery,useGetSerialsDetailsQuery } from '../../../services/kinogoService';
+import {  useParams } from 'react-router-dom';
+
+import {  useGetMovieDetailsQuery} from '../../../services/kinogoService';
 import { URL_FOR_IMAGE } from '../../../constants/constants';
 import Favoruite from '../../UI/buttons/Favoruite';
 import Rating from '../../UI/buttons/Rating';
@@ -15,7 +15,7 @@ const {data} = useGetMovieDetailsQuery(id+'')
 const video = data?.videos.results.slice(0,1)[0];
 const credits = data?.credits.cast.slice(0,5)
 const {swittchSun} =useAppSelector(state=>state.turnReduser)
-console.log(data)
+
 
 
   return (

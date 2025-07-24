@@ -1,4 +1,4 @@
-import React,{useEffect,useState,FC,useMemo,memo} from 'react'
+import {useState,FC,useMemo,memo} from 'react'
 import style from './pagination.module.scss';
 import styles from './../buttons/watchButton.module.scss'
 import classNames from 'classnames';
@@ -6,8 +6,8 @@ import classNames from 'classnames';
 import usePagination from '../../../store/hooks/usePagination';
 import { createPages } from '../../../helper/helper';
 import { setPage } from '../../../store/redusers/paginationSlice';
-import { useAppSelector,useAppDispatch } from '../../../store/hooks/hooks';
-import { IMovies,IMovie } from '../../../models/models';
+import { useAppDispatch } from '../../../store/hooks/hooks';
+import { IMovies } from '../../../models/models';
 
 
 interface IIpaginateProp{
@@ -25,7 +25,6 @@ export const Pagination:FC<IIpaginateProp> =memo( ({data}) =>{
     nextPage,
     prevPage,
     page,
-    totalPage,
     total_pages
     }=usePagination({contentPerPage:9,data:data})
     const pages =useMemo(()=>createPages(total_pages),[total_pages])

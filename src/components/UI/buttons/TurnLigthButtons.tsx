@@ -1,8 +1,8 @@
 
 import style from './../header/header.module.scss';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks';
+import {  useAppSelector } from '../../../store/hooks/hooks';
 import {FC} from 'react';
-import {turnDark,turnLight} from './../../../store/redusers/turnsLight'
+
 interface TurnLigthButtonsProp{
     handleSwitchSun:()=>void,
     handleSwitchMoon:()=>void

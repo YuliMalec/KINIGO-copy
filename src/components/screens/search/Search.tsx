@@ -2,7 +2,7 @@
 import FilmItem from '../../UI/FilmItem/FilmItem'
 import { useGetSerchQuery } from '../../../services/kinogoService'
 import { useAppSelector } from '../../../store/hooks/hooks'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
  
 export default function Search() {
 
@@ -13,7 +13,7 @@ export default function Search() {
     const {data} = useGetSerchQuery({search,page})
    
  
- console.log(data)
+ 
  const title = location.pathname;
  const tv = data?.results.filter(item=>{
  return  item.media_type ==='tv';

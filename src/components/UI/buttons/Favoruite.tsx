@@ -1,4 +1,4 @@
-import React from 'react'
+
 import style from './favoruite.module.scss'
 import { TiPlus } from "react-icons/ti";
 

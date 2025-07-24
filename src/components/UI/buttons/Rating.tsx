@@ -1,6 +1,6 @@
-import {FC,useRef} from 'react'
+import {FC} from 'react'
 import style from './rating.module.scss'
-import stars from './../../../assets/rating.svg'
+
 
 interface ratingProp{
   item:number|undefined

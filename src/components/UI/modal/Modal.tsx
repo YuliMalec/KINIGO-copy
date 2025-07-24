@@ -14,9 +14,9 @@ export default function Register() {
   const [email,setEmail] = useState<string>()
   const [password,setPassword] = useState<string>()
   const [passwordRep,setPasswordRep]= useState<string>()
-const {register,handleSubmit,watch,formState:{errors}} = useForm<inputs>()
+const {register,handleSubmit,formState:{errors}} = useForm<inputs>()
 const onSubmit: SubmitHandler<inputs> = (data) => {
-  console.log(data)
+  console.log(errors,data)
   dispatch(RegistrationIsOpen(false))
 }
   

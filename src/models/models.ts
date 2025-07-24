@@ -1,5 +1,5 @@
 
-import { number } from 'prop-types';
+
 
 
 export interface IURL {

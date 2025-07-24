@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useAppSelector } from '../../../store/hooks/hooks'
 import { useGetCartoonsQuery} from '../../../services/kinogoService';
 import FilmItem from '../../UI/FilmItem/FilmItem';

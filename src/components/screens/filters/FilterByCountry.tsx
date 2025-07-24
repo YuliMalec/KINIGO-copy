@@ -1,7 +1,6 @@
-import React,{useEffect,useState} from 'react'
-import { useFilterByCountryQuery, useGetNowplayingQuery } from '../../../services/kinogoService'
-import { useAppDispatch, useAppSelector } from '../../../store/hooks/hooks'
-import { IMovies } from '../../../models/models'
+
+import { useFilterByCountryQuery} from '../../../services/kinogoService'
+import {  useAppSelector } from '../../../store/hooks/hooks'
 import FilmItem from '../../UI/FilmItem/FilmItem'
 import { getKeyOfCounrty } from '../../../helper/helper'
 
